@@ -13,6 +13,9 @@ Myapp::Application.routes.draw do
   get "/admins/index", to: "admins#index", as: "admins"
 
   delete "/admins/:id", to: "admins#delete", as: "delete_admin"
+
+
+  resources :albums
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
