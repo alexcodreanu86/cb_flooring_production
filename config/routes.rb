@@ -1,11 +1,18 @@
 Myapp::Application.routes.draw do
-  devise_for :admins
   get "home/index"
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  devise_for :admins, skip: [:registrations]
+  root to: 'home#index'
 
-  # You can have the root of your site routed with "root"
-root to: 'home#index'
+  get "/admins/new_admin", to: "admins#new", as: "new_admin"
+  post "/admins/create_admin", to: "admins#create", as: "create_admin"
+
+  get "/admins/edit_profile", to: "admins#edit_profile", as: "edit_admin_profile"
+  post "/admins/update_profile", to: "admins#update_profile", as: "update_admin_profile"
+
+  get "/admins/show", to: "admins#show", as: "admin_show"
+  get "/admins/index", to: "admins#index", as: "admins"
+
+  delete "/admins/:id", to: "admins#delete", as: "delete_admin"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

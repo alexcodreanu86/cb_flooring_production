@@ -1,0 +1,4 @@
+
+<% @admins.each do |admin| %>
+  <li><%= admin.email %> <%= link_to "Delete", delete_admin_path(admin), method: "DELETE", data:{confirm: "Are you sure you want to delete #{admin.email}"} %></li>
+<% end %>

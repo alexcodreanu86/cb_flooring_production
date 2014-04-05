@@ -1,0 +1,67 @@
+.navbar {
+  display:table;
+  background-color: #5B4D3D;
+  height: 15%;
+  width: 100%;
+  li{
+    display:table-cell; 
+    vertical-align:middle;
+    padding: 0em 2em;
+  }
+}
+
+.title-area{
+  margin: 0 auto;
+}
+
+#nav-links-list {
+  display: inline;
+}
+
+#logo{
+  width: 8em;
+  -webkit-transition: background 0.4s;
+  -moz-transition:    background 0.4s;
+  -ms-transition:     background 0.4s;
+  -o-transition:      background 0.4s;
+  transition:         background 0.4s; 
+
+  &:hover{
+    -webkit-transition: background 0.4s;
+    -moz-transition:    background 0.4s;
+    -ms-transition:     background 0.4s;
+    -o-transition:      background 0.4s;
+    transition:         background 0.4s; 
+    background: #665644;
+  }
+}
+
+.nav-link {
+  font-family: 'Old Standard TT', Arial, sans-serif;
+  font-size: 1.5em;
+  color: #FFAE48;
+  -webkit-transition: color 0.2s;
+  -moz-transition:    color 0.2s;
+  -ms-transition:     color 0.2s;
+  -o-transition:      color 0.2s;
+  transition:         color 0.2s;
+  &:hover{
+    color: #FFE0B0;
+    -webkit-transition: color 0.2s;
+    -moz-transition:    color 0.2s;
+    -ms-transition:     color 0.2s;
+    -o-transition:      color 0.2s;
+    transition:         color 0.2s;
+  }
+}
+
+.banner-background {
+  width: 100%;
+  height: 85%;
+  background-image: url("wood_background.jpg");
+}
+
+
+
+
+

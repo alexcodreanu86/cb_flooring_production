@@ -1,0 +1,5 @@
+<%= form_for @admin, url: {action: "create", method: "post"} do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <%= f.submit %>
+<% end %>
