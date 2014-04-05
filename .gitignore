@@ -6,4 +6,4 @@
 /log/*.log
 /tmp
 /db/schema.rb
-/public.assets
+/public/assets
