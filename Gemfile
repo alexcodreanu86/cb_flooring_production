@@ -32,6 +32,23 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem 'pry'
+  gem 'pry-nav'
+end
+
+group :production do 
+  gem 'unicorn'
+end
+
+group :test do 
+
+end
+
+gem 'foundation-rails'
+gem "paperclip", "~> 4.1"
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
