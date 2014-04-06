@@ -1,21 +1,15 @@
 class AdminsController < ApplicationController
+  before_filter :authenticate_admin
+
   def new
     @admin = Admin.new
   end
 
   def create
-    @admin = Admin.new(admin_params.merge(password: "testtest", password_confirmation: "testtest"))
+    @admin = Admin.new(admin_params)
     @admin.save
     flash[:notice] = "#{@admin.email} added to the list of admins."
     redirect_to admin_show_path
-  end
-
-  def edit_profile
-
-  end
-
-  def update_profile
-
   end
 
   def show
@@ -35,7 +29,15 @@ class AdminsController < ApplicationController
   protected
 
   def admin_params
-    params.require(:admin).permit(:email)
+    params.require(:admin).permit(:email).merge(password: "testtest", password_confirmation: "testtest")
+  end
+
+
+  def authenticate_admin
+    if !(current_admin)
+      flash[:alert] = "You are not authorized to view this page"
+      redirect_to root_path
+    end
   end
 
 end
