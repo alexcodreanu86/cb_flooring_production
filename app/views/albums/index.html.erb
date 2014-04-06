@@ -1,6 +1,14 @@
 <div class="row">
   <h2>Albums:</h2>
+  <ul id="albums-list" %>
+    <% @albums.each do |album| %>
+      <li><%= link_to album.title, album_path(album) %></li>
+    <% end %>
+  </ul>
 
-  
+  <%= link_to "New Album", new_album_path, class: "button small radius" %>
+
+
+
 
 </div>

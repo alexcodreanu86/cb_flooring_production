@@ -16,6 +16,9 @@
     <% if current_admin %>
       <li><%= link_to "Admin Menu", admin_show_path, class: "nav-link" %></li>
       <li><%= link_to "Sign Out", destroy_admin_session_path,method: "DELETE", class: "nav-link" %></li>
+      <% if !(request.path == root_path) %>
+        <li><%= link_to "Back", :back , class: "button tiny round back-button secondary"%></li>
+      <% end %>
     <% end %>
     
     <div class="row">

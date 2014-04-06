@@ -1,0 +1,13 @@
+<div class="columns large-6 large-offset-3 medium-8 medium-offset-2 small-12">
+  <%= form_for @album do |f| %>
+    
+    <div><%= f.label :title %></div>
+    <div><%= f.text_field :title, autofocus: true%></div>
+    
+    <div><%= f.label :description %></div>
+    <div><%= f.text_area :description, rows: 10  %></div>
+
+    <div><%= f.submit class: "button small radius"%></div>
+
+  <% end %>
+</div>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='http://fonts.googleapis.com/css?family=Old+Standard+TT' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" href="favicon.ico" />
+    <%= favicon_link_tag "favicon.ico" %>
 
     <title>CbFlooring</title>
     
@@ -17,7 +17,12 @@
   <body>
 
     <%= render "layouts/nav" %>
-
+      <% if !@errors.nil? %>
+        <div class="row">
+          <%= render "layouts/errors" %>
+        </div>
+      <% end %>
+      
       <%= yield %>
 
     <%= javascript_include_tag "application" %>
