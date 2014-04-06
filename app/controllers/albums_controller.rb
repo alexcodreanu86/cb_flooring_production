@@ -21,12 +21,24 @@ class AlbumsController < ApplicationController
   end
 
   def edit
+    @album = Album.where(id: params[:id]).first
   end
 
   def update
+    @album = Album.where(id: params[:id]).first
+    @album.update(album_params)
+    if @album.save
+      redirect_to @album
+    else
+      @errors = @album.errors.messages
+      render "edit"
+    end
   end
 
-  def delete
+  def destroy
+    @album = Album.where(id: params[:id]).first
+    @album.destroy
+    redirect_to albums_path
   end
 
   def index
