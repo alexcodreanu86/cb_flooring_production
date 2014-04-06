@@ -1,13 +1,17 @@
 Myapp::Application.routes.draw do
   get "home/index"
   devise_for :admins, skip: [:registrations]
+
+  as :admin do
+    get 'admins/edit' => 'devise/registrations#edit', :as => 'edit_admin_registration'    
+    put 'admins' => 'devise/registrations#update', :as => 'admin_registration'            
+  end
+
+
   root to: 'home#index'
 
   get "/admins/new_admin", to: "admins#new", as: "new_admin"
   post "/admins/create_admin", to: "admins#create", as: "create_admin"
-
-  get "/admins/edit_profile", to: "admins#edit_profile", as: "edit_admin_profile"
-  post "/admins/update_profile", to: "admins#update_profile", as: "update_admin_profile"
 
   get "/admins/show", to: "admins#show", as: "admin_show"
   get "/admins/index", to: "admins#index", as: "admins"
