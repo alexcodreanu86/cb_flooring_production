@@ -19,7 +19,9 @@ Myapp::Application.routes.draw do
   delete "/admins/:id", to: "admins#delete", as: "delete_admin"
 
 
-  resources :albums
+  resources :albums, shallow: true do  
+    resources :images
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
