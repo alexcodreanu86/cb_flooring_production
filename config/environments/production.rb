@@ -77,4 +77,30 @@ Myapp::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['S3_BUCKET_NAME'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_KEY']
+    }
+  }
+
+
+  config.action_mailer.default_url_options = { host: 'http://cbflooringinc.com' }
+
+
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address:              'smtp.gmail.com',
+  #   port:                 587,
+  #   domain:               'gmail.com',
+  #   user_name:            ENV["EMAIL_ADDRESS"],
+  #   password:             ENV["EMAIL_PASSWORD"],
+  #   authentication:       'plain',
+  #   enable_starttls_auto: true  
+  # }
+
 end

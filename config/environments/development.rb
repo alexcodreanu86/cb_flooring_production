@@ -29,5 +29,5 @@ Myapp::Application.configure do
 
   Paperclip.options[:command_path] = Rails.root.join("ulpoad")
 
-  config.paperclip_defaults = {:storage => :fog, :fog_credentials => {:provider => "Local", :local_root => "#{Rails.root}/upload"}, :fog_directory => "", :fog_host => "localhost"}
+  # config.paperclip_defaults = {:storage => :fog, :fog_credentials => {:provider => "Local", :local_root => "#{Rails.root}/upload"}, :fog_directory => "", :fog_host => "localhost"}
 end

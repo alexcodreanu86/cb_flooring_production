@@ -16,9 +16,11 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = Image.new(image_params.merge(album_id: params[:album_id]))
-    if params[:image] 
+    @album = Album.where(id: params[:album_id]).first
+    @order_number = @album.images.count
+    @image = @album.images.new(image_params.merge(order: @order_number))
 
+    if params[:image] 
       if @image.save
         redirect_to @image
       else
