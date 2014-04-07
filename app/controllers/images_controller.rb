@@ -16,7 +16,8 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = Image.new(image_params.merge(album_id: params[:album_id]))
+    order_number = Image.where(album_id: params[:album_id]).count
+    @image = Image.new(image_params.merge(album_id: params[:album_id]), order: order_number)
     if params[:image] 
 
       if @image.save
