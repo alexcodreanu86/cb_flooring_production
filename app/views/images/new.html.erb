@@ -1,6 +1,3 @@
 <div class="row">
-  <%= form_for [@album, @image],url: {action: "create"}, :html => { :multipart => true } do |f| %>
-    <%= f.file_field :image_path %>
-    <%= f.submit "Add Image", class: "button tiny radius" %>
-  <% end %>
+  <%= render "images/image_form" %>
 </div>
