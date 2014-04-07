@@ -3,6 +3,7 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.where(id: params[:id]).first
+    @images = @album.images
     redirect_to root_path unless @album
   end
 
