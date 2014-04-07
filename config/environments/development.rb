@@ -29,5 +29,14 @@ Myapp::Application.configure do
 
   Paperclip.options[:command_path] = Rails.root.join("ulpoad")
 
+  # config.paperclip_defaults = {
+  #   :storage => :s3,
+  #   :bucket => ENV['S3_BUCKET_NAME'],
+  #   :s3_credentials => {
+  #     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+  #     :secret_access_key => ENV['AWS_SECRET_KEY']
+  #   },
+  # }
+
   # config.paperclip_defaults = {:storage => :fog, :fog_credentials => {:provider => "Local", :local_root => "#{Rails.root}/upload"}, :fog_directory => "", :fog_host => "localhost"}
 end

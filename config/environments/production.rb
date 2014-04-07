@@ -80,12 +80,11 @@ Myapp::Application.configure do
 
   config.paperclip_defaults = {
     :storage => :s3,
-    :bucket => ENV['S3_BUCKET_NAME'],
     :s3_credentials => {
+      :bucket => 'cbflooringinc',
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
       :secret_access_key => ENV['AWS_SECRET_KEY']
     },
-    
   }
 
 
