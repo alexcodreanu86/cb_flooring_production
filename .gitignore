@@ -1,1 +1,10 @@
+/.bundle
+
+
+/log/*.log
+/tmp
+
+/public/assets
+/public/system
 chestii
+/upload
