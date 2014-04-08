@@ -13,7 +13,8 @@ To test this code you need to have `imagemagick` installed if you have homebrew 
 
 
 After you clone the repository assuming that you already have ruby and rails installed, the following commands will get you running:
-1. `bundle install
+
+1. `bundle install`
 
 2. `bundle exec rake db:create`
 
