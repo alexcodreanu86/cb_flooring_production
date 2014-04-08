@@ -18,6 +18,8 @@ Myapp::Application.routes.draw do
 
   delete "/admins/:id", to: "admins#delete", as: "delete_admin"
 
+  get "/albums/admin_index", to: "albums#admin_index", as: "albums_admin_index"
+  get "/albums/admin_show/:id", to: "albums#admin_show", as: "album_admin_show"
 
   resources :albums, shallow: true do  
     resources :images

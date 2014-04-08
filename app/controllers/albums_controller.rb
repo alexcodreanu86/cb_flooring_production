@@ -1,5 +1,19 @@
 class AlbumsController < ApplicationController
-  before_filter :authenticate_admin, only: [:new, :create, :edit, :delete, :update, :index, :show]
+  before_filter :authenticate_admin, only: [:new, :create, :edit, :delete, :update, :admin_index, :admin_show]
+
+  def admin_index
+    @albums = Album.all.order(:created_at).reverse_order
+  end
+
+  def admin_show
+    @album = Album.where(id: params[:id]).first
+    @images = @album.images.order(:order)
+    redirect_to root_path unless @album
+  end
+
+  def index
+    @albums = Album.all.order(:created_at).reverse_order
+  end
 
   def show
     @album = Album.where(id: params[:id]).first
@@ -42,9 +56,6 @@ class AlbumsController < ApplicationController
     redirect_to albums_path
   end
 
-  def index
-    @albums = Album.all.order(:created_at).reverse_order
-  end
 
 
   protected

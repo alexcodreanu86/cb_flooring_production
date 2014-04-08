@@ -6,17 +6,17 @@
     </li>
 
     <% if current_admin && request.path != root_path %>
-      <li><%= link_to "Albums" , albums_path , class: "nav-link" %></li>
+      <li><%= link_to "Albums" , albums_admin_index_path , class: "nav-link" %></li>
     <% else %>
-      <li><%= link_to "About us", "#", class: "nav-link" %></li>
-      <li><%= link_to "Galery", "#", class: "nav-link" %></li>
-      <li class="toggle-topbar menu-icon"><a href="#" class="nav-link">Request Quote</a></li>
+      <li><%= link_to "Galery", albums_path, class: "nav-link" %></li>
+      <li><%= link_to "About us", "#about-us", class: "nav-link scroll" %></li>
+      <li><%= link_to "Request Quote", "#quote", class: "nav-link scrool" %></li>
     <% end %>
    
     <% if current_admin %>
       <li><%= link_to "Admin Menu", admin_show_path, class: "nav-link" %></li>
-
       <li><%= link_to "Sign Out", destroy_admin_session_path,method: "DELETE", class: "nav-link" %></li>
+      
     <% end %>
     <% if request.path != root_path %>
       <li><%= link_to "Back", :back , class: "button tiny round secondary back-button" %></li>
