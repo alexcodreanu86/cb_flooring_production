@@ -1,0 +1,1 @@
+Admin.create(email: "alexcodreanu86@gmail.com", password: "testtest", password_confirmation: "testtest")
