@@ -1,3 +1,15 @@
 <div class="row">
-  <%= image_tag @image.image_path %>
+  <div class="large-8 large-offset-2 small-10 small-offset-1">
+    <div id="image"><%= image_tag @image.image_path %></div>
+    <% if @image.description.empty? %>
+      <p>This image has no description yet!</p>
+    <% else %>
+      <p>Description:</p>
+      <p><%= @image.description %></p>
+    <% end %>
+
+    <%= link_to "Delete Image", image_path(@image), method: "DELETE", data: {confirm: "Are you sure that you want to delete this image?"} , class: "button tiny round alert" %>
+    <%= link_to "Edit Description", edit_image_path(@image), class: "button tiny round success" %>
+    <%= link_to "Back to Album", album_path(@image.album), class: "button tiny round" %>
+  </div>
 </div>

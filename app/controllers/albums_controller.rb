@@ -1,9 +1,9 @@
 class AlbumsController < ApplicationController
-  before_filter :authenticate_admin, only: [:new, :create, :edit, :delete, :update, :index]
+  before_filter :authenticate_admin, only: [:new, :create, :edit, :delete, :update, :index, :show]
 
   def show
     @album = Album.where(id: params[:id]).first
-    @images = @album.images
+    @images = @album.images.order(:order)
     redirect_to root_path unless @album
   end
 

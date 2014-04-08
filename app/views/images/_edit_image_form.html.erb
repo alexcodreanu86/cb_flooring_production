@@ -1,0 +1,8 @@
+<div class="columns large-6 large-offset-3 medium-8 medium-offset-2 small-12">
+  <%= form_for @image do |f| %>
+    <div><%= f.label :description, "Short description" %></div>
+    <div><%= f.text_field :description %></div>
+
+    <div><%= f.submit "Edit Image", class: "button tiny radius" %></div>
+  <% end %>
+</div>
