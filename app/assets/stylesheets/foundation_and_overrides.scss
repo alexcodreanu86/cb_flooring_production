@@ -12,6 +12,11 @@
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
 
+div.orbit-slide-number {
+  padding: 0.5em;
+  background: rgba(0,0,0, 0.5) !important;
+}
+
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
 

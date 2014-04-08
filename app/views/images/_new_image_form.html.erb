@@ -1,0 +1,11 @@
+<div class="columns large-6 large-offset-3 medium-8 medium-offset-2 small-12">
+  <%= form_for [@album, @image],url: {action: "create"}, :html => { :multipart => true } do |f| %>
+    <div><%= f.label :image_path, "Upload image" %></div>
+    <div><%= f.file_field :image_path %></div>
+
+    <div><%= f.label :description, "Short description" %></div>
+    <div><%= f.text_field :description %></div>
+
+    <div><%= f.submit "Add Image", class: "button tiny radius" %></div>
+  <% end %>
+</div>

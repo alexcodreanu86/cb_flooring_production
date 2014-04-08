@@ -17,12 +17,12 @@ class ImagesController < ApplicationController
 
   def create
     @album = Album.where(id: params[:album_id]).first
-    @order_number = @album.images.count
-    @image = @album.images.new(image_params.merge(order: @order_number))
+    @order_number = @album.images.count + 1
+    @image = @album.images.new(new_image_params.merge(order: @order_number))
 
     if params[:image] 
       if @image.save
-        redirect_to @image
+        redirect_to @album
       else
         @errors = @image.errors.messages
         render "new"
@@ -35,6 +35,27 @@ class ImagesController < ApplicationController
     end
   end
 
+  def update
+    @image = Image.where(id: params[:id]).first
+    @image.update(edit_image_params)
+
+    if @image.save
+      redirect_to @image.album
+    else
+      @errors = @image.errors.messages
+      render "edit"
+    end
+  end
+
+  def destroy
+    @image = Image.where(id: params[:id]).first
+    @album = @image.album
+    @album.images.order(:order).each_with_index{|image, index| image.update(order: index + 1)}
+    @image.destroy
+    flash[:notice] = "The image has been deleted!"
+    redirect_to @album
+  end 
+
   def edit
     @image = Image.where(id: params[:id]).first
     unless @image
@@ -46,8 +67,12 @@ class ImagesController < ApplicationController
 
   protected
 
-  def image_params
-    params.require(:image).permit(:image_path)
+  def new_image_params
+    params.require(:image).permit(:image_path, :description)
+  end
+
+  def edit_image_params
+    params.require(:image).permit(:description)
   end
 
   def authenticate_admin
