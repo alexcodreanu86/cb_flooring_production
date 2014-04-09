@@ -1,0 +1,17 @@
+<div class="columns large-6 large-offset-3 medium-8 medium-offset-2 small-12">
+  <h2>Request a quote:</h2>
+  * required
+  <br><br>
+  <%= form_for @quote_request do |f| %>
+    <div><%= f.label :name, "* Your name" %></div>
+    <div><%= f.text_field :name, autofocus: true %></div>
+    
+    <div><%= f.label :phone, "* Phone" %></div>
+    <div><%= f.telephone_field :phone %></div>
+
+    <div><%= f.label :message, "You can leave us a message here" %></div>
+    <div><%= f.text_area :message, rows: 6 %></div>
+
+    <div><%= f.submit "Submit Request", class: "button tiny radius", id: "quote-submit" %></div>
+  <% end %>
+</div>

@@ -4,6 +4,7 @@ class Image < ActiveRecord::Base
                     :default_url => "/images/:style/missing.png"
                     
   validates_attachment :image_path, :content_type => { :content_type => ["image/jpg", "image/jpeg" ,"image/gif", "image/png"] }
+  validates_attachment :image_path, presence: true
 
   belongs_to :album
 end

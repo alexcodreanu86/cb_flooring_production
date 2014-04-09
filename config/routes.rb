@@ -24,6 +24,9 @@ Myapp::Application.routes.draw do
   resources :albums, shallow: true do  
     resources :images
   end
+
+  get "/quote_requests/:id/change_status", to: "quote_requests#change_status", as: "change_quote_status"
+  resources :quote_requests
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

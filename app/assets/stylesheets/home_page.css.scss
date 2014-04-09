@@ -66,7 +66,7 @@
 
 .inside-banner { 
   position: relative;
-  top:20%;
+  top:25%;
   p {  
     color: #FFD47D;
     font-size: 3em;
@@ -85,6 +85,8 @@ a#quote-center-link{
   -o-transition:      box-shadow 0.3s;
   transition:         box-shadow 0.3s;
 
+  background: rgba(10,10,10, 0.2);
+
   &:hover {
     color: #FFFFEA;
     border: 2px solid #FFFFEA;
@@ -94,6 +96,8 @@ a#quote-center-link{
     -ms-transition:     box-shadow 0.3s;
     -o-transition:      box-shadow 0.3s;
     transition:         box-shadow 0.3s;
+    
+    background: rgba(10,10,10, 0.5);
 
     -webkit-box-shadow: 0px 0px 10px 3px rgba(207,205,207,1);
     -moz-box-shadow: 0px 0px 10px 3px rgba(207,205,207,1);

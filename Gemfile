@@ -32,18 +32,27 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development do
-  gem 'pry'
-  gem 'pry-nav'
-end
 
 group :production do 
   gem 'unicorn'
 end
 
-group :test do 
+group :development, :test do 
+  gem 'pry'
+  gem 'pry-nav'
+  gem 'rspec-rails' 
+  gem 'factory_girl_rails' 
+end 
 
-end
+group :test do 
+  gem 'shoulda-matchers'
+  gem 'faker' 
+  gem 'capybara' 
+  gem 'guard-rspec' 
+  gem 'launchy'
+  gem 'database_cleaner' 
+  gem 'coveralls', require: false
+end 
 
 gem 'foundation-rails'
 gem "paperclip", "~> 4.1"

@@ -1,1 +1,0 @@
-Admin.create(email: "a@a.com", password: "testtest", password_confirmation: "testtest")

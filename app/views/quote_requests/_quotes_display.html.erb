@@ -1,0 +1,20 @@
+<div class="columns large-5 large-offset-1 medium-8 medium-offset-2 small-10 small-offset-1" >
+  <h1>Unchecked:</h1>
+  <ul class="quites-list">
+    <% @new_quotes.each do |new_quote| %>
+      <li>Name: <%= link_to new_quote.name, new_quote %>
+      <p>Phone: <%= new_quote.phone %></p></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="columns large-5 large-offset-1 medium-8 medium-offset-2 small-10 small-offset-1" >
+  <h1>Followed up with:</h1>
+  <ul class="quites-list">
+    <% @called_quotes.each do |called_quote| %>
+      <li><%= link_to called_quote.name, called_quote %>
+        <p>Phone: <%= called_quote.phone %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
