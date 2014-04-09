@@ -8,6 +8,8 @@ class QuoteRequestsController < ApplicationController
   def create
     @quote_request = QuoteRequest.new(quote_params)
     if @quote_request.save
+      email = AdminMailer.new_quote_request(@quote_request)
+      email.deliver
       render "confirmation"
     else
       @errors = @quote_request.errors.messages

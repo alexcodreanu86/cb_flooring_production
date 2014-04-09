@@ -1,0 +1,31 @@
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <style type="text/css">
+  body{
+    background-color: #FFFFEA;
+    font-size: 1em;
+  }
+  #title{color: steelblue; font-size: 1.5em;}
+
+  #email-nav{
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <div id="email-nav">
+    <p id="title">A new quote request has been submited</p>
+  </div>
+  <p>Name:<br><%= @quote.name %></p>
+  <p>Phone:<br><%= @quote.phone %></p>
+  <% if @has_message %>
+    <p>Message: <br> <%= @quote.message %></p>
+
+  <% else %>
+    <p>No message was attached.</p>
+  <% end %>
+
+  <p>You can view the quote request <a href="http://cbflooringinc.com/quote_requests/<%= @quote.id %>">here</a> if you are signed in.</p>
+</body>
+</html>
