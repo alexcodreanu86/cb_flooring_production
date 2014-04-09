@@ -12,7 +12,7 @@
   <h1>Followed up with:</h1>
   <ul class="quites-list">
     <% @called_quotes.each do |called_quote| %>
-      <li><%= link_to called_quote.name, called_quote %>
+      <li>Name: <%= link_to called_quote.name, called_quote %>
         <p>Phone: <%= called_quote.phone %></p>
       </li>
     <% end %>
