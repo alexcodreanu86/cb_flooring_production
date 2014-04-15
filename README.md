@@ -22,6 +22,6 @@ After you clone the repository assuming that you already have ruby and rails ins
 
 4. `rails s` or `rails server`
 
-Now you should be able to go to [http://localhost:3000](http://localhost:3000) and you should be on the home page. To be able to sign in as an admin you have to manually go to [http://localhost:3000/admins/sign_in](http://localhost:3000/admins/sign_in). The seed file automatically creates an admin with credentials email: `a@a.com` and password: `testtest`. And you can play with it from there. 
+Now you should be able to go to [http://localhost:3000](http://localhost:3000) and you should be on the home page. To be able to sign in as an admin you have to manually go to [http://localhost:3000/admins/sign_in](http://localhost:3000/admins/sign_in). The seed file automatically creates an admin with credentials email: `test@test.com` and password: `testtest`. And you can play with it from there. 
 
 I will update this file with printscreens when I will have most of the functionality and styling finished.
