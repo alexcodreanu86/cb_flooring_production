@@ -12,16 +12,15 @@ class AlbumsController < ApplicationController
   end
 
   def index
-    @albums = Album.all.order(:created_at).reverse_order
-    if request.xhr?
-      render partial: "albums/index_partial"
-    end
+    @albums = Album.all.order(:created_at).reverse_order 
+    render layout: !request.xhr?   
   end
 
   def show
     @album = Album.where(id: params[:id]).first
     @images = @album.images.order(:order)
     redirect_to root_path unless @album
+    render :layout => !request.xhr?
   end
 
   def new
@@ -56,7 +55,7 @@ class AlbumsController < ApplicationController
   def destroy
     @album = Album.where(id: params[:id]).first
     @album.destroy
-    redirect_to albums_path
+    redirect_to albums_admin_index_path
   end
 
 

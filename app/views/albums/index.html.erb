@@ -1,1 +1,11 @@
-<%= render "albums/index_partial" %>
+<div class="row">
+  <h2>Albums:</h2>
+  <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+    <% @albums.each do |album| %>
+      <li >
+        <p class="album-title"><%= album.title %>:</p>
+        <%= link_to image_tag(album.images.last.image_path(:thumb), class: "album-thumb"), album_path(album), class: "album-link", data: {"reveal-id" => "second-modal"} %>
+      </li>
+    <% end %>
+  </ul>
+</div>
