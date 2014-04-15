@@ -22,7 +22,7 @@ class ImagesController < ApplicationController
 
     if params[:image] 
       if @image.save
-        redirect_to @album
+        redirect_to album_admin_show_path(@album)
       else
         @errors = @image.errors.messages
         render "new"
@@ -38,9 +38,10 @@ class ImagesController < ApplicationController
   def update
     @image = Image.where(id: params[:id]).first
     @image.update(edit_image_params)
+    @album = @image.album
 
     if @image.save
-      redirect_to @image.album
+      redirect_to album_admin_show_path(@album)
     else
       @errors = @image.errors.messages
       render "edit"
@@ -53,15 +54,16 @@ class ImagesController < ApplicationController
     @album.images.order(:order).each_with_index{|image, index| image.update(order: index + 1)}
     @image.destroy
     flash[:notice] = "The image has been deleted!"
-    redirect_to @album
+    redirect_to album_admin_show_path(@album)
   end 
 
   def edit
     @image = Image.where(id: params[:id]).first
     unless @image
-      flash[:alert]="You are not autorized on this page"
-      redirect_to
+      flash[:alert]="No such Image was found!"
+      redirect_to root_path
     end
+    @album = @image.album
   end
 
 

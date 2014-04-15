@@ -3,6 +3,7 @@ class QuoteRequestsController < ApplicationController
 
   def new
     @quote_request = QuoteRequest.new
+    render :layout => !request.xhr?
   end
 
   def create
@@ -10,7 +11,7 @@ class QuoteRequestsController < ApplicationController
     if @quote_request.save
       email = AdminMailer.new_quote_request(@quote_request)
       email.deliver
-      render "confirmation"
+      render "confirmation", :layout => !request.xhr?
     else
       @errors = @quote_request.errors.messages
       render "new"

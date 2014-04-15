@@ -4,7 +4,7 @@
     <% @albums.each do |album| %>
       <li >
         <p class="album-title"><%= album.title %>:</p>
-        <%= link_to image_tag(album.images.last.image_path(:thumb), class: "album-thumb"), album_path(album)  %>
+        <%= link_to image_tag(album.images.last.image_path(:thumb), class: "album-thumb"), album_path(album), class: "album-link", data: {"reveal-id" => "second-modal"} %>
       </li>
     <% end %>
   </ul>
