@@ -1,3 +1,10 @@
 .quites-list {
   list-style: none;
 }
+
+#quote-submit {
+  background-color: #7F3E2A;
+  &:hover{
+    background-color: #A44C12;
+  }
+}
