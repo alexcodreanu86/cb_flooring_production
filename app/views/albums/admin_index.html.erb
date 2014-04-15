@@ -4,7 +4,11 @@
     <% @albums.each do |album| %>
       <li>
         <p class="album-title"><%= album.title %>:</p>
+        <% if album.images.last %>
         <%= link_to image_tag(album.images.last.image_path(:thumb), class: "album-thumb"), album_admin_show_path(album) %>
+        <% else %>
+          <%=  link_to "No images in this album yet", album_admin_show_path(album), class: "album-thumb" %>
+        <% end %>
       </li>
     <% end %>
   </ul>

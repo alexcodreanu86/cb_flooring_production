@@ -13,6 +13,9 @@ class AlbumsController < ApplicationController
 
   def index
     @albums = Album.all.order(:created_at).reverse_order
+    if request.xhr?
+      render partial: "albums/index_partial"
+    end
   end
 
   def show
@@ -28,7 +31,7 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     if @album.save
-      redirect_to @album
+      redirect_to album_admin_show_path(@album)
     else
       @errors = @album.errors.messages
       render "new"

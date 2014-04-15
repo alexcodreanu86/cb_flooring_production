@@ -8,7 +8,7 @@
     <% if current_admin && request.path != root_path %>
       <li><%= link_to "Albums" , albums_admin_index_path , class: "nav-link" %></li>
     <% else %>
-      <li><%= link_to "Galery", albums_path, class: "nav-link" %></li>
+      <li><%= link_to "Galery", albums_path, class: "nav-link", id: "galery-link", data: {"reveal-id" => "modal-popup"}%></li>
       <li><%= link_to "About us", "#about-us", class: "nav-link scroll" %></li>
       <% if !current_admin %> 
         <li><%= link_to "Request Quote", new_quote_request_path , class: "nav-link" %></li>
