@@ -180,11 +180,15 @@ a#quote-center-link{
   }
 
   .nav-link {
-    font-size: 0.8em;
+    font-size: 1em;
   }
 
   .navbar li {
     padding: 0 0.5em;
+  }
+
+  .navbar {
+    text-align: center;
   }
 
   .title-area {
