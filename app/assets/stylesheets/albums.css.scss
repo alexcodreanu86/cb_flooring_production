@@ -1,0 +1,37 @@
+.album-thumb {
+  padding: 0.2em;
+  outline: 1px solid black;
+
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+
+  -webkit-transition: box-shadow 0.3s;
+  -moz-transition:    box-shadow 0.3s;
+  -ms-transition:     box-shadow 0.3s;
+  -o-transition:      box-shadow 0.3s;
+  transition:         box-shadow 0.3s;
+  &:hover {
+    -webkit-transition: box-shadow 0.3s;
+    -moz-transition:    box-shadow 0.3s;
+    -ms-transition:     box-shadow 0.3s;
+    -o-transition:      box-shadow 0.3s;
+    transition:         box-shadow 0.3s;
+    
+    -webkit-box-shadow: 0px 0px 12px 2px rgba(235,148,54,1);
+    -moz-box-shadow: 0px 0px 12px 2px rgba(235,148,54,1);
+    box-shadow: 0px 0px 12px 2px rgba(235,148,54,1);
+  }
+}
+
+.radius{
+  -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.5);
+}
+
+.orbit-container {
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,1);
+-moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,1);
+box-shadow: 0px 0px 30px 0px rgba(0,0,0,1);
+}

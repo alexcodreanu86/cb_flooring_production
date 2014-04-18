@@ -1,5 +1,5 @@
 <div class="row">
-  <h2>Albums:</h2>
+  <h2 class="secondary-title">Albums:</h2>
   <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
     <% @albums.each do |album| %>
       <li>
@@ -13,5 +13,5 @@
     <% end %>
   </ul>
 
-  <%= link_to "New Album", new_album_path, class: "button small radius" %>
+  <%= link_to "New Album", new_album_path, class: "button small radius new-album-button" %>
 </div>

@@ -13,7 +13,7 @@ $(function(){
   var getDataAndAppendToModal = function(url, modal){
     $.get(url, function(serverResponse){ 
       $(modal).html(serverResponse);
-      $(modal).append("<a class='close-reveal-modal '>&#215;</a>");
+      $(modal).append("<a class='close-reveal-modal'>&#215;</a>");
     });
   }
 
@@ -50,7 +50,7 @@ $(function(){
     $.post(url, data, function(serverResponse){
       console.log(serverResponse);
       $("#small-modal").html(serverResponse);
-      $("#small-modal").append("<a class='close-reveal-modal '>&#215;</a>");
+      $("#small-modal").append("<a class='close-reveal-modal'>&#215;</a>");
     })
   })
 

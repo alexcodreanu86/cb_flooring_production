@@ -3,22 +3,35 @@
   background-color: #5B4D3D;
   height: 15%;
   width: 100%;
+  z-index: 5;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
+
   li{
     display:table-cell; 
     vertical-align:middle;
     padding: 0em 2em;
   }
 }
-
+.logo-area {
+  margin: 0 auto;
+  display: inline-block;
+}
 .title-area{
   margin: 0 auto;
+  display: inline-block;
+  height: 4.5em;
 }
 
 #nav-links-list {
   display: inline;
 }
 
+
+
 #logo{
+  width: 300px;
   -webkit-transition: background 0.4s;
   -moz-transition:    background 0.4s;
   -ms-transition:     background 0.4s;
@@ -39,6 +52,7 @@
   font-family: 'Old Standard TT', Arial, sans-serif;
   font-size: 1.5em;
   color: #FFAE48;
+  text-shadow: 5px 5px 5px rgba(30, 30, 30, 1);
   -webkit-transition: color 0.2s;
   -moz-transition:    color 0.2s;
   -ms-transition:     color 0.2s;
@@ -55,6 +69,9 @@
 }
 
 .banner-background {
+  -webkit-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.5);
+box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.5);
   width: 100%;
   height: 85%;
   background-image: url("wood_background.jpg");
@@ -71,7 +88,18 @@
     color: #FFF4AE;
     font-size: 3em;
     font-weight: bold;
+    text-shadow: 6px 6px 5px rgba(30, 30, 30, 1);
   }
+}
+
+.under-banner {
+  -webkit-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.5);
+}
+.secondary-title {
+  font-family: inherit;
+  text-shadow: 2px 2px 3px rgba(30, 30, 30, 0.7);
 }
 
 a#quote-center-link{
@@ -84,6 +112,10 @@ a#quote-center-link{
   -ms-transition:     box-shadow 0.3s;
   -o-transition:      box-shadow 0.3s;
   transition:         box-shadow 0.3s;
+
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
 
   background: rgba(10,10,10, 0.2);
 
@@ -124,6 +156,9 @@ a#quote-center-link{
   /* W3C Markup, IE10 Release Preview */ 
   background-image: linear-gradient(to top, #AD9374 0%, #5B4D3D 100%); 
   
+  -webkit-box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.5);
   text-align: center;
   color: #FFF4AE;
 
@@ -135,8 +170,30 @@ a#quote-center-link{
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
+.close-reveal-modal:hover {
+  color: #666;
+}
 
+@media screen and(max-width: 580px){
+  #logo{
+    width: 5em;
+  }
 
+  .nav-link {
+    font-size: 0.8em;
+  }
+
+  .title-area {
+    height: 2em;
+  }
+
+  .inside-banner {
+    top: 5%;
+    p {
+      font-size: 1.3em;
+    }
+  }
+}
 
 
 

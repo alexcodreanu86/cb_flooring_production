@@ -1,5 +1,5 @@
 <div class="row">
-  <h2><%= @album.title %></h2>
+  <h2 class="secondary-title"><%= @album.title %></h2>
 
   <p>Description:</p>
   <p><%= @album.description %></p>
@@ -9,7 +9,7 @@
       <ul class="example-orbit" data-orbit>
         <% @images.each_with_index  do |image, index| %>
           <li>
-            <%= image_tag image.image_path, alt: "slide #{index + 1}" %>
+            <%= image_tag image.image_path, alt: "slide #{index + 1}", class: "image" %>
             <% if !image.description.empty? %>
               <div class="orbit-caption">
                 <%= image.description %> 
