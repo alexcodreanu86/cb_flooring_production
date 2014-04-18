@@ -1,9 +1,12 @@
 <nav class="navbar" data-topbar>
 
-  <ul class="title-area">
+  <ul class="logo-area">
     <li class="name">
       <h1><%= link_to image_tag("cb_logo.png", id: "logo"), root_path %></h1>
     </li>
+  </ul>
+
+  <ul class="title-area">
 
     <% if current_admin && request.path != root_path %>
       <li><%= link_to "Albums" , albums_admin_index_path , class: "nav-link" %></li>
