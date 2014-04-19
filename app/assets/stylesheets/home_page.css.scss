@@ -70,13 +70,13 @@
 
 .banner-background {
   -webkit-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.5);
--moz-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.5);
-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.5);
   width: 100%;
   height: 85%;
   background-image: url("wood_background.jpg");
-  // background-size: 100% ;
-  background-position:right top;
+  background-size: cover;
+  background-position:left top;
   position:relative;
   overflow: auto;
 }
@@ -174,7 +174,74 @@ a#quote-center-link{
   color: #666;
 }
 
-@media screen and(max-width: 580px){
+
+
+
+@media screen and(min-width: 581px) and(max-width: 868px){
+  #logo{
+    width: 5em;
+  }
+
+  .nav-link {
+    font-size: 1em;
+  }
+
+
+  .navbar li {
+    padding: 0 0.5em;
+  }
+
+
+  .title-area {
+    height: 3em;
+  }
+
+  .inside-banner {
+    top: 5%;
+    p {
+      font-size: 1.3em;
+    }
+  }
+
+  .under-banner {
+    padding: 0 0.5em;
+  }
+}
+
+@media screen and(min-width: 445px) and(max-width: 580px){
+  #logo{
+    width: 5em;
+  }
+
+  .nav-link {
+    font-size: 1em;
+  }
+
+  .navbar li {
+    padding: 0 0.5em;
+  }
+
+  .navbar {
+    text-align: center;
+  }
+
+  .title-area {
+    height: 3em;
+  }
+
+  .inside-banner {
+    top: 5%;
+    p {
+      font-size: 1.3em;
+    }
+  }
+
+  .under-banner {
+    padding: 0 0.5em;
+  }
+}
+
+@media screen and(max-width: 445px){
   #logo{
     width: 5em;
   }
@@ -206,8 +273,6 @@ a#quote-center-link{
     padding: 0 0.5em;
   }
 }
-
-
 
 
 
