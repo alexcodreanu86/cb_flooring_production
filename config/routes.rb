@@ -25,8 +25,16 @@ Myapp::Application.routes.draw do
     resources :images
   end
 
+  resources :customers, shallow: true do 
+    resources :jobs
+  end
+
+  get "/customers/:quote_request_id/new", to: "customers#new", as: "new_customer_from_quote"
+  
+
   get "/quote_requests/:id/change_status", to: "quote_requests#change_status", as: "change_quote_status"
   resources :quote_requests
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

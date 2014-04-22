@@ -77,11 +77,4 @@ class ImagesController < ApplicationController
     params.require(:image).permit(:description)
   end
 
-  def authenticate_admin
-    if !(current_admin)
-      flash[:warning] = "You are not authorized to view this page"
-      redirect_to root_path
-    end
-  end
-
 end

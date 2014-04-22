@@ -1,3 +1,3 @@
 class JobsController < ApplicationController
-
+  
 end

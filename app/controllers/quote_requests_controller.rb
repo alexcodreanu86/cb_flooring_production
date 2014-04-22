@@ -46,11 +46,4 @@ class QuoteRequestsController < ApplicationController
   def quote_params
     params.require(:quote_request).permit(:phone, :name, :message)
   end
-
-  def authenticate_admin
-    if !(current_admin)
-      flash[:warning] = "You are not authorized to view this page"
-      redirect_to root_path
-    end
-  end
 end
