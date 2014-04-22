@@ -10,7 +10,7 @@ class CustomersController < ApplicationController
   end
 
   def index
-
+    @customers = Customer.all.order(:name)
   end
 
   def new
@@ -24,6 +24,7 @@ class CustomersController < ApplicationController
 
   def create
     @customer = Customer.new(customer_params)
+    @customer.update_phone_number
 
     if @customer.save
       redirect_to @customer
@@ -34,15 +35,29 @@ class CustomersController < ApplicationController
   end
 
   def edit
-
+    @customer = Customer.where(id: params[:id]).first
+    if !@customer
+      flash[:alert] = "No customer found with id #{params[:id]}!"
+      redirect_to root_path
+    end
   end
 
   def update
-
+    @customer = Customer.where(id: params[:id]).first
+    @customer.update(customer_params)
+    if @customer.save
+      redirect_to @customer
+    else
+      @errors = @customer.errors.messages
+      render "edit"
+    end
   end
 
   def destroy
-
+    @customer = Customer.where(id: params[:id]).first
+    @customer.destroy
+    flash[:notice] = "#{@customer.name} has been deleted from your customers list."
+    redirect_to customers_path
   end
 
   protected

@@ -5,7 +5,9 @@ class Customer < ActiveRecord::Base
 
   has_many :jobs
 
-  before_save :format_phone
+  def update_phone_number
+    format_phone
+  end
 
   private
 
