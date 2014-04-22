@@ -2,7 +2,11 @@ class CustomersController < ApplicationController
   before_filter :authenticate_admin
 
   def show
-
+    @customer = Customer.where(id: params[:id]).first
+    if !@customer
+      flash[:alert] = "Invalid link"
+      redirect_to root_path
+    end
   end
 
   def index
@@ -19,7 +23,14 @@ class CustomersController < ApplicationController
   end
 
   def create
+    @customer = Customer.new(customer_params)
 
+    if @customer.save
+      redirect_to @customer
+    else
+      @errors = @customer.errors.messages
+      render "new"
+    end
   end
 
   def edit
