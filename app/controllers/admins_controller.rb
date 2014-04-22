@@ -32,12 +32,4 @@ class AdminsController < ApplicationController
     params.require(:admin).permit(:email).merge(password: "testtest", password_confirmation: "testtest")
   end
 
-
-  def authenticate_admin
-    if !(current_admin)
-      flash[:alert] = "You are not authorized to view this page"
-      redirect_to root_path
-    end
-  end
-
 end
