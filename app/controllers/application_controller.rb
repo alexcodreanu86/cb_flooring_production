@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_admin
     if !(current_admin)
-      flash[:warning] = "You are not authorized to view this page"
+      flash[:alert] = "You are either not authorized to view this page or it doesn't exist!"
       redirect_to root_path
     end
   end

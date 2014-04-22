@@ -1,0 +1,8 @@
+<div class="row">
+  <h2 class="secondary-title">Customers List:</h2>
+  <ul id="customers-list">
+    <% @customers.each do  |customer| %>
+      <li><%= link_to customer.name, customer_path(customer) %></li>
+    <% end %>
+  </ul>
+</div>
