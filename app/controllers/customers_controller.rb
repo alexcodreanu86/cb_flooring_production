@@ -1,4 +1,4 @@
-class CustomerController < ApplicationController
+class CustomersController < ApplicationController
   before_filter :authenticate_admin
 
   def show
@@ -16,7 +16,6 @@ class CustomerController < ApplicationController
       @customer.name = quote_request.name
       @customer.phone = quote_request.phone
     end
-
   end
 
   def create
@@ -37,5 +36,8 @@ class CustomerController < ApplicationController
 
   protected
 
+  def customer_params
+    params.require(:customer).permit(:name, :address, :email, :phone)
+  end
 
 end

@@ -1,0 +1,20 @@
+<div class="columns large-6 large-offset-3 medium-8 medium-offset-2 small-12">
+  <%= form_for @customer do |f| %>
+    <div><%= f.label :name %></div>
+    <div><%= f.text_field :name, autofocus: true %></div>
+
+    <div><%= f.label :phone %></div>
+    <div><%= f.text_field :phone %></div>
+
+
+    <div><%= f.label :email%></div>
+    <div><%= f.text_field :email %></div>
+
+
+    <div><%= f.label :address %></div>  
+    <div><%= f.text_field :address %></div>
+
+    <div><%= f.submit class: "button radius tiny" %></div>
+  <% end %>
+
+</div>
