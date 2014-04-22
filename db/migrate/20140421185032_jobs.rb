@@ -5,7 +5,7 @@ class Jobs < ActiveRecord::Migration
       t.date :completed_at
       t.string :address
       t.text :description
-
+      
       t.timestamps
     end
   end

@@ -21,4 +21,5 @@ describe Customer do
   it "responds to jobs" do 
     expect(FactoryGirl.build(:customer)).to respond_to(:jobs)
   end
+  
 end
