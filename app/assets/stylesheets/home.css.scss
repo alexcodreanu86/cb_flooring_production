@@ -19,3 +19,20 @@ body{
   background-color: #FFFFEA;
 }
 
+@media screen and(min-width: 581px) and(max-width: 868px){
+  .back-button {
+    margin-top: 0;
+  }
+}
+
+@media screen and(max-width: 445px){
+  .back-button {
+    margin-top: 0;
+  }
+}
+
+@media screen and(min-width: 445px) and(max-width: 580px){
+  .back-button {
+    margin-top: 0;
+  }
+}

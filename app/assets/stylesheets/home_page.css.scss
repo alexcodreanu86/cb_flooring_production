@@ -186,6 +186,9 @@ a#quote-center-link{
     font-size: 1em;
   }
 
+  .navbar {
+    height: auto;
+  }
 
   .navbar li {
     padding: 0 0.5em;
@@ -217,7 +220,11 @@ a#quote-center-link{
     font-size: 1em;
   }
 
-  .navbar li {
+  .navbar {
+    height: auto;
+  }
+
+  .navbar li{
     padding: 0 0.5em;
   }
 
