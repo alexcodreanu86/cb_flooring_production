@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="columns large-9 large-offset-1">
   
   <h2 class="secondary-title"><%= @admin.email %></h2>
   <h2 class="secondary-title">Manage:</h2>
@@ -7,6 +7,6 @@
   <ul class="admin-menu">
     <li>Your <%= link_to "credentials", edit_admin_registration_path %></li>  
     <li><%= link_to "Add admin", new_admin_path%></li>
+    <li><%= link_to "Admins list", admins_path %></li>
   </ul>
-
 </div>
