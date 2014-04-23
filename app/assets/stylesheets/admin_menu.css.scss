@@ -34,3 +34,20 @@
   -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
 }
+
+#customers-list {
+  font-family: inherit;
+  border-collapse:collapse;
+  border: 1px solid #777;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+
+  thead tr th{
+    background: #777;
+    color: #fff;  
+  }
+
+}
+
+

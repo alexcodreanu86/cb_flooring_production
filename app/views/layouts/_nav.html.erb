@@ -19,7 +19,6 @@
    
     <% if current_admin && request.path == root_path%>
       <li><%= link_to "Admin Menu", admin_show_path, class: "nav-link" %></li>
-      
     <% end %>
     <% if request.path != root_path  && current_admin %>
       <li><%= link_to "Sign Out", destroy_admin_session_path,method: "DELETE", class: "nav-link" %></li>
