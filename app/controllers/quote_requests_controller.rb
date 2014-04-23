@@ -9,8 +9,8 @@ class QuoteRequestsController < ApplicationController
   def create
     @quote_request = QuoteRequest.new(quote_params)
     if @quote_request.save
-      email = AdminMailer.new_quote_request(@quote_request)
-      email.deliver
+      # email = AdminMailer.new_quote_request(@quote_request)
+      # email.deliver
       render "confirmation", :layout => !request.xhr?
     else
       @errors = @quote_request.errors.messages
@@ -32,6 +32,7 @@ class QuoteRequestsController < ApplicationController
   
   def show
     @quote_request = QuoteRequest.where(id: params[:id]).first
+    @customer = Customer.where(:phone => @quote_request.phone).first
   end
 
 

@@ -22,9 +22,15 @@
           <%= render "layouts/errors" %>
         </div>
       <% end %>
-    
-        <%= yield %>
 
+      <% if current_admin && request.path != root_path %>
+        <div class="row"></div>
+        <%= render "layouts/admin_menu" %>
+      <% end %>
+        <%= yield %>
+      <% if current_admin && request.path != root_path %>
+        </div>
+      <% end %>
     <%= javascript_include_tag "application" %>
     <div id="first-modal" class="reveal-modal xlarge" data-reveal></div>
     <div id="second-modal" class="reveal-modal xlarge" data-reveal></div>

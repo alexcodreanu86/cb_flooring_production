@@ -1,8 +1,19 @@
-<div class="row">
+<div class="columns large-9 large-offset-1">
   <h2 class="secondary-title">Customers List:</h2>
-  <ul id="customers-list">
-    <% @customers.each do  |customer| %>
-      <li><%= link_to customer.name, customer_path(customer) %></li>
-    <% end %>
-  </ul>
+  <table id="customers-list">
+    <thead> 
+      <tr>
+        <th>Name:</th> 
+        <th>Phone:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @customers.each do  |customer| %>
+        <tr>
+          <td><%= link_to customer.name, customer_path(customer) %></td>  
+          <td><%= customer.phone %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
