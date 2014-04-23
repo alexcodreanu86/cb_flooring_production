@@ -1,19 +1,25 @@
-<div class="columns large-9 large-offset-1">
+<div class="columns large-9 large-offset-1 small-7 medium-8">
   <h2 class="secondary-title">Customers List:</h2>
-  <table id="customers-list">
-    <thead> 
-      <tr>
-        <th>Name:</th> 
-        <th>Phone:</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @customers.each do  |customer| %>
+  <div class="columns large-6 ">
+    <table id="customers-list">
+      <thead> 
         <tr>
-          <td><%= link_to customer.name, customer_path(customer) %></td>  
-          <td><%= customer.phone %></td>
+          <th>Name:</th> 
+          <th>Phone:</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @customers.each do  |customer| %>
+          <tr>
+            <td><%= link_to customer.name, customer_path(customer) %></td>  
+            <td><%= customer.phone %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="columns large-6">
+    <%= link_to "Add Customer", new_customer_path, class: "button radius tiny" %>
+  </div>
 </div>
+

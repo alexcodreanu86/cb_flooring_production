@@ -1,0 +1,14 @@
+<div class="columns large-6 large-offset-1 medium-8 medium-offset-2 small-12">
+  <%= form_for [@customer, @job] do |f| %> 
+    <div><%=  f.label :address %></div>
+    <div><%= f.text_field :address %></div>
+    
+    <div><%= f.label :description %></div>
+    <div><%= f.text_area :description , rows: 5 %></div>
+
+    <div><%= f.label :completed_at %></div>
+    <div><%= f.date_field :completed_at %></div>
+
+    <div><%= f.submit  class: "button tiny radius"%></div>
+  <% end %>
+</div>

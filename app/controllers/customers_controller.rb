@@ -3,6 +3,7 @@ class CustomersController < ApplicationController
 
   def show
     @customer = Customer.where(id: params[:id]).first
+    @jobs = @customer.jobs
     if !@customer
       flash[:alert] = "Invalid link"
       redirect_to root_path

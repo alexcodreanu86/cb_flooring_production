@@ -1,6 +1,6 @@
 <div class="columns large-9 large-offset-1">
 
-  <h2 class="secondary-title">Customer Info</h2>
+  <h2 class="secondary-title">Customer Info:</h2>
 
   <p>Name: <%= @customer.name %></p>
   <p>Email: <%= @customer.email.empty? ? "No email provided yet!"  : @customer.email%></p>
@@ -14,4 +14,15 @@
   <hr>
 
   <h2 class="secondary-title">Jobs:</h2>
+  <% if @jobs.empty? %>
+  <p>You have no jobs listed for <%= @customer.name %>.</p>
+  <% else %>  
+    <ul class="jobs-list">
+      <% @jobs.each do |job| %>
+        <li><%= link_to "#{job.address}", job_path(job) %> <br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp<%= job.completed_at.to_s.empty? ? "Not completed yet" : "Completed Date: #{job.completed_at}" %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= link_to "New Job", new_customer_job_path(@customer), class: "button radius tiny" %>
 </div>
