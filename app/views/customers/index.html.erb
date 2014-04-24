@@ -1,17 +1,17 @@
 <div class="container columns large-9 large-offset-1 small-7 medium-8">
   <h2 class="secondary-title">Customers List:</h2>
   <div class="columns large-6 ">
-    <table id="customers-list">
+    <table id="table-list">
       <thead> 
         <tr>
-          <th>Name:</th> 
+          <th class="bordered-cell">Name:</th> 
           <th>Phone:</th>
         </tr>
       </thead>
       <tbody>
         <% @customers.each do  |customer| %>
           <tr>
-            <td><%= link_to customer.name, customer_path(customer) %></td>  
+            <td class="bordered-cell"><%= link_to customer.name, customer_path(customer) %></td>  
             <td><%= customer.phone %></td>
           </tr>
         <% end %>
