@@ -58,8 +58,6 @@ class AlbumsController < ApplicationController
     redirect_to albums_admin_index_path
   end
 
-
-
   protected
 
   def album_params

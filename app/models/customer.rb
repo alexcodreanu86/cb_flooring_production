@@ -3,7 +3,7 @@ class Customer < ActiveRecord::Base
   validates :phone, uniqueness: true
   validates_format_of :phone, with: /\d?\D?\d{3}\D*\d{3}\D?\d{4}\D?\d{4}?/
 
-  has_many :jobs
+  has_many :jobs, dependent: :destroy
 
   def update_phone_number
     format_phone
