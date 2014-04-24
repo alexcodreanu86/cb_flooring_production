@@ -7,7 +7,7 @@ class JobsController < ApplicationController
   end
 
   def index
-    @jobs = Job.all.order(completed_at: :desc)
+    @jobs = Job.all.order(completed_at: :desc).includes(:customer)
   end
 
   def new
@@ -47,8 +47,9 @@ class JobsController < ApplicationController
 
   def destroy
     @job = Job.where(id: params[:id]).first
+    @job.destroy
     flash[:notice] = "Job deleted successfuly"
-    redirect_to customer_path(job.customer_id)
+    redirect_to customer_path(@job.customer_id)
   end
 
   protected

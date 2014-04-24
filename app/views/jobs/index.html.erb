@@ -1,2 +1,21 @@
 <div class="container columns large-9 large-offset-1 small-7 medium-8">
+  <h2 class="secondary-title">Jobs:</h2>
+    <table id="customers-list">
+      <thead> 
+        <tr>
+          <th>Completion date</th> 
+          <th>Address</th>
+          <th>Customer name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @jobs.each do |job| %>
+          <tr>
+            <td><%= job.completed_at.to_s.empty? ? "Not completed" : job.completed_at %></td>
+            <td><%= link_to job.address, job_path(job)  %></td>
+            <td><%= link_to job.customer.name, customer_path(job.customer_id) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 </div>
