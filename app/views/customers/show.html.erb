@@ -20,7 +20,7 @@
     <ul class="jobs-list">
       <% @jobs.each do |job| %>
         <li><%= link_to "#{job.address}", job_path(job) %> <br> 
-          &nbsp&nbsp&nbsp&nbsp&nbsp<%= job.completed_at.to_s.empty? ? "Not completed yet" : "Completed Date: #{job.completed_at}" %></li>
+          &nbsp&nbsp&nbsp&nbsp&nbsp<%= job.completed_at.to_s.empty? ? "Not completed yet" : "Completion Date: #{job.completed_at.strftime('%m-%d-%Y')}" %></li>
       <% end %>
     </ul>
   <% end %>

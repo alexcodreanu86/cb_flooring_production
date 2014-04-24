@@ -11,7 +11,7 @@
       <tbody>
         <% @jobs.each do |job| %>
           <tr>
-            <td><%= job.completed_at.to_s.empty? ? "Not completed" : job.completed_at %></td>
+            <td><%= job.completed_at.to_s.empty? ? "Not completed" : job.completed_at.strftime('%m-%d-%Y') %></td>
             <td><%= link_to job.address, job_path(job)  %></td>
             <td><%= link_to job.customer.name, customer_path(job.customer_id) %></td>
           </tr>
