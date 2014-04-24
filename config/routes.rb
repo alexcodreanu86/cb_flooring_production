@@ -24,10 +24,13 @@ Myapp::Application.routes.draw do
   resources :albums, shallow: true do  
     resources :images
   end
+  
+  get "/jobs/index", to: "jobs#index", as: "jobs"
 
   resources :customers, shallow: true do 
-    resources :jobs
+    resources :jobs, only: [:new, :create, :edit, :update, :destroy, :show]
   end
+
 
   get "/customers/:quote_request_id/new", to: "customers#new", as: "new_customer_from_quote"
   

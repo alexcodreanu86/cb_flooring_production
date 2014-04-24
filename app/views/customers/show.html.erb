@@ -1,4 +1,4 @@
-<div class="columns large-9 large-offset-1">
+<div class="container columns large-9 large-offset-1 small-7 medium-8">
 
   <h2 class="secondary-title">Customer Info:</h2>
 
@@ -7,7 +7,7 @@
   <p>Phone: <%= @customer.phone %></p>
   <p>Address: <%= @customer.address.empty? ? "No address provided yet!"  : @customer.address %></p>
 
-  <%= link_to "Update Info", edit_customer_path(@customer), class: "button radius tiny spaced" %>
+  <%= link_to "Update Info", edit_customer_path(@customer), class: "button radius tiny success spaced" %>
 
   <%= link_to "Delete Customer", customer_path(@customer), data: {confirm: "Are you sure you want to delete this contact?"}, method: "DELETE", class: "button radius tiny alert spaced" %>
 
