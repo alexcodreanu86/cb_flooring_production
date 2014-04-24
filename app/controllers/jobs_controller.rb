@@ -3,6 +3,7 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.where(id: params[:id]).first
+    @customer = @job.customer
   end
 
   def index
@@ -37,7 +38,7 @@ class JobsController < ApplicationController
 
     if @job.save
       flash[:notice] = "Job updated successfuly"
-      redirect_to @customer
+      redirect_to customer_path(@job.customer_id)
     else
       @errors = @jobs.errors.messages
       render "edit"

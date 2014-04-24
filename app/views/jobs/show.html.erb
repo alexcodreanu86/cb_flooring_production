@@ -1,0 +1,9 @@
+<div class="container columns large-9 large-offset-1 small-7 medium-8">
+  <h2 class="regular-title">Job for <%= link_to @customer.name, customer_path(@customer) %>.</h2>
+  <p>Address: <%= @job.address %></p>
+  <p>Completion date: <%= @job.completed_at.to_s.empty? ? "Not completed yet" : @job.completed_at%></p>
+  <p>Description: <%= @job.description %></p>
+
+  <%= link_to "Update Info", edit_job_path(@job), class: "button tiny radius success spaced" %>
+  <%= link_to "Delete Job", job_path(@job), method: "DELETE", data: {confirm: "Are you sure you want to delete this job?"}, class: "button tiny radius alert" %>
+</div>
