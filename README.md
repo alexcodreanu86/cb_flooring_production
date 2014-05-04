@@ -5,6 +5,8 @@
 ###Description: 
 I am building it for my brother. The ultimate goal is to have a website that displays a bunch of his galleryes, has some information about him and gives the visitor the ability to requet a quote. When a quote request is submited an email is sent to my brother with the name and phone number of the person that submits the request, I will probably provide a timeframe when the customer wants to be called. 
 
+![Imgur](http://i.imgur.com/j8Ms1fL.png)
+
 On the admin side, my brother's side, he will have the ability to create new albums, also view a list of unchecked requests, mark them as checked. Create a customer from a quote request or create a brand new customer. Save jobs for customers and keep track of information about the jobs completion and other optional description. If I will have time I may incorporate google calendars so he could schedule appointments directly on his calendar with the name, phone number and any other fields in this table. This readme will update as the projects evolves.
 
 In case I haven't crashed the server it can be visited [here](http://cbflooringinc.com).
@@ -23,5 +25,6 @@ After you clone the repository assuming that you already have ruby and rails ins
 4. `rails s` or `rails server`
 
 Now you should be able to go to [http://localhost:3000](http://localhost:3000) and you should be on the home page. To be able to sign in as an admin you have to manually go to [http://localhost:3000/admins/sign_in](http://localhost:3000/admins/sign_in). The seed file automatically creates an admin with credentials email: `test@test.com` and password: `testtest`. And you can play with it from there. 
+
 
 I will update this file with printscreens when I will have most of the functionality and styling finished.
