@@ -12,19 +12,22 @@
     <% if current_admin && request.path != root_path %>
     <% else %>
       <li><%= link_to "About us", "#about-us", class: "nav-link scroll" %></li>
-      <% if !current_admin %> 
+      <% if !current_admin %>
         <li><%= link_to "Request Quote", new_quote_request_path , class: "nav-link request-quote-link", data: {"reveal-id" => "small-modal"}%></li>
       <% end %>
     <% end %>
-   
+
+    <li id="angies-list-award">
+      <script type="text/javascript" src="http://www.angieslist.com/webbadge/insertwebbadge.js?bid=b3647d2286cde49a4aadd1b66f98889b"></script><script type="text/javascript">if (BADGEBOX) BADGEBOX.PlaceBadge();</script><noscript><div id="ssanslnk"><a href="http://www.angieslist.com/companylist/us/il/niles/cb-flooring-inc-reviews-7782160.aspx" title="Angie's List Super Service Award winner">CHICAGO hardwood floor repair</a></div></noscript>
+    </li>
     <% if current_admin && request.path == root_path%>
       <li><%= link_to "Admin Menu", admin_show_path, class: "nav-link" %></li>
     <% end %>
     <% if request.path != root_path  && current_admin %>
       <li><%= link_to "Sign Out", destroy_admin_session_path,method: "DELETE", class: "nav-link" %></li>
       <li><%= link_to "Back", :back , class: "button tiny round secondary back-button" %></li>
-    <% end %> 
-    
+    <% end %>
+
     <div class="row">
       <% if notice %>
         <p class="flash notice"><%= notice %></p>
@@ -32,5 +35,6 @@
         <p class="flash alert"><%= alert %></p>
       <% end %>
     </div>
+
   </ul>
 </nav>
